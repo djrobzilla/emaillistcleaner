@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container">
+        <img src="{{ url_for('static', filename='banner.png') }}" alt="Banner" class="banner">
         <h1>Upload Email List</h1>
         <form action="/" method="post" enctype="multipart/form-data">
             <input type="file" name="file" accept=".csv">

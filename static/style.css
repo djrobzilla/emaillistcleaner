@@ -13,10 +13,16 @@ body {
     background-color: #1e1e1e; /* Slightly lighter dark background */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
+    text-align: center; /* Center align content */
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0; /* Rounded corners for the top */
 }
 
 h1 {
-    text-align: center;
     color: #ffffff; /* White text */
 }
 
