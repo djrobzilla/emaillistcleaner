@@ -47,7 +47,13 @@ def upload_file():
             output_path = os.path.join(
                 app.config['UPLOAD_FOLDER'], 'cleaned_' + filename)
             clean_email_list(input_path, output_path)
-            return send_file(output_path, as_attachment=True)
+            response = send_file(output_path, as_attachment=True)
+
+            # Delete the files after sending the response
+            os.remove(input_path)
+            os.remove(output_path)
+
+            return response
     return render_template('upload.html')
 
 
