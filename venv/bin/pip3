@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/mnt/c/Users/rober/Downloads/Documents/Code/experiments/ZtM Exercise/ai experiments/emaillistcleaner/venv/bin/python3" "$0" "$@"
+'''exec' "/mnt/c/Users/rober/Downloads/Documents/Code/experiments/ZtM Exercise/ai experiments/emaillistcleaner/venv/bin/python3.12" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
