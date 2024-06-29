@@ -74,7 +74,7 @@ def upload_file():
                 return render_template('upload.html', removed_emails=removed_emails, download_url=url_for('download_file', filename='cleaned_' + filename))
             except Exception as e:
                 flash('Error cleaning email list: {}'.format(e))
-                return redirect(url_for('upload_file'))
+                return redirect(request.url)
     return render_template('emaillistcleaner.html')
 
 
