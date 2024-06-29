@@ -57,27 +57,30 @@ def upload_file():
             file.save(input_path)
             output_path = os.path.join(
                 app.config['UPLOAD_FOLDER'], 'cleaned_' + filename)
-            removed_emails = clean_email_list(input_path, output_path)
-            response = send_file(output_path, as_attachment=True)
+            try:
+                removed_emails = clean_email_list(input_path, output_path)
 
-            # Save the removed emails in session
-            session['removed_emails'] = removed_emails
+                # Save the removed emails in session
+                session['removed_emails'] = removed_emails
 
-            # Send the cleaned file
-            response = send_file(output_path, as_attachment=True)
+                # Send the cleaned file
+                response = send_file(output_path, as_attachment=True)
 
-            # Delete the files after sending the response
-            os.remove(input_path)
-            os.remove(output_path)
+                # Delete the files after sending the response
+                os.remove(input_path)
+                os.remove(output_path)
 
-            return response
+                # Render the template with the report
+                return render_template('upload.html', removed_emails=removed_emails, download_url=url_for('download_file', filename='cleaned_' + filename))
+            except Exception as e:
+                flash('Error cleaning email list: {}'.format(e))
+                return redirect(url_for('upload_file'))
     return render_template('emaillistcleaner.html')
 
 
-@app.route('/report')
-def report():
-    removed_emails = session.get('removed_emails', [])
-    return render_template('report.html', removed_emails=removed_emails)
+@app.route('/download/<filename>')
+def download_file(filename):
+    return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename), as_attachment=True)
 
 
 if __name__ == "__main__":
