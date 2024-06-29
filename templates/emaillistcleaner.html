@@ -24,6 +24,7 @@
                     <li>Row {{ row_num }}: {{ emails|join(', ') }}</li>
                 {% endfor %}
             </ul>
+            <p><a href="{{ download_url }}" class="download-link">Download Cleaned File</a></p>
         </div>
     {% endif %}
 </body>

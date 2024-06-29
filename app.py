@@ -63,9 +63,6 @@ def upload_file():
                 # Save the removed emails in session
                 session['removed_emails'] = removed_emails
 
-                # Send the cleaned file
-                response = send_file(output_path, as_attachment=True)
-
                 # Delete the files after sending the response
                 os.remove(input_path)
                 os.remove(output_path)
