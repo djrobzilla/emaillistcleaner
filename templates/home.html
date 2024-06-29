@@ -8,12 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Avian Tools</h1>
-        <ul>
-            <li><a href="{{ url_for('upload_file') }}">Email List Cleaner</a></li>
-            <li>Historical Geofence Combiner Tool (Coming Soon)</li>
-            <li>Zendesk Email List Downloader Chrome Extension (Coming Soon)</li>
-        </ul>
+        <header>
+            <img src="{{ url_for('static', filename='homebanner.jpg') }}" alt="Banner" class="banner">
+            <h1>Avian Tools</h1>
+        </header>
+        <main>
+            <ul class="tool-list">
+                <li><a href="{{ url_for('upload_file') }}" class="tool-link">Email List Cleaner</a></li>
+                <li class="coming-soon">Historical Geofence Combiner Tool (Coming Soon)</li>
+                <li class="coming-soon">Zendesk Email List Downloader Chrome Extension (Coming Soon)</li>
+            </ul>
+        </main>
     </div>
 </body>
 </html>

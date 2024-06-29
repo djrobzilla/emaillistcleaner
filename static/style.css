@@ -7,13 +7,17 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
     background-color: #1e1e1e; /* Slightly lighter dark background */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     text-align: center; /* Center align content */
+}
+
+header {
+    margin-bottom: 20px;
 }
 
 .banner {
@@ -24,32 +28,33 @@ body {
 
 h1 {
     color: #ffffff; /* White text */
+    margin: 20px 0;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.tool-list {
+    list-style: none;
+    padding: 0;
 }
 
-input[type="file"] {
-    padding: 10px;
-    border: 1px solid #333333; /* Dark gray border */
-    border-radius: 4px;
-    background-color: #2c2c2c; /* Darker background for input */
-    color: #e0e0e0; /* Light text */
+.tool-list li {
+    margin: 10px 0;
 }
 
-input[type="submit"] {
-    padding: 10px;
-    border: none;
+.tool-link {
+    display: inline-block;
+    padding: 10px 20px;
     border-radius: 4px;
     background-color: #007bff; /* Feathr blue */
     color: white;
-    cursor: pointer;
-    font-size: 16px;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-input[type="submit"]:hover {
+.tool-link:hover {
     background-color: #0056b3; /* Darker blue for hover */
+}
+
+.coming-soon {
+    color: #888888; /* Gray text for coming soon items */
+    font-size: 18px;
 }
