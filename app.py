@@ -75,6 +75,17 @@ def upload_file():
 def download_file(filename):
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename), as_attachment=True)
 
+    @after_this_request
+    def remove_file(response):
+        try:
+            os.remove(file_path)
+        except Exception as error:
+            app.logger.error(
+                "Error removing or closing downloaded file handle", error)
+        return response
+
+    return send_file(file_path, as_attachment=True)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
