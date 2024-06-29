@@ -15,5 +15,16 @@
         </form>
         <p><a href="{{ url_for('home') }}" class="home-link">Back to Home</a></p>
     </div>
+    {% if removed_emails %}
+        <div class="report">
+            <h2>Cleaning Report</h2>
+            <p>Total emails removed: {{ removed_emails|length }}</p>
+            <ul>
+                {% for row_num, emails in removed_emails %}
+                    <li>Row {{ row_num }}: {{ emails|join(', ') }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
 </body>
 </html>
