@@ -86,3 +86,18 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3; /* Darker blue for hover */
 }
+
+.home-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #007bff; /* Feathr blue */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.home-link:hover {
+    background-color: #0056b3; /* Darker blue for hover */
+}
