@@ -63,10 +63,6 @@ def upload_file():
                 # Save the removed emails in session
                 session['removed_emails'] = removed_emails
 
-                # Delete the files after sending the response
-                os.remove(input_path)
-                os.remove(output_path)
-
                 # Render the template with the report
                 return render_template('emaillistcleaner.html', removed_emails=removed_emails, download_url=url_for('download_file', filename='cleaned_' + filename))
             except Exception as e:
