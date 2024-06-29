@@ -37,7 +37,7 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/emaillistcleaner', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -59,7 +59,7 @@ def upload_file():
             os.remove(output_path)
 
             return response
-    return render_template('emaillistcleaner.html')
+    return render_template('upload.html')
 
 
 if __name__ == "__main__":
