@@ -71,7 +71,7 @@ def upload_file():
                 os.remove(output_path)
 
                 # Render the template with the report
-                return render_template('upload.html', removed_emails=removed_emails, download_url=url_for('download_file', filename='cleaned_' + filename))
+                return render_template('emaillistcleaner.html', removed_emails=removed_emails, download_url=url_for('download_file', filename='cleaned_' + filename))
             except Exception as e:
                 flash('Error cleaning email list: {}'.format(e))
                 return redirect(request.url)
