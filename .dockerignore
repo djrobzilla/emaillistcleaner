@@ -1,0 +1,6 @@
+venv/
+__pychache__/
+*.pyc
+uploads/*
+.git
+.gitignore

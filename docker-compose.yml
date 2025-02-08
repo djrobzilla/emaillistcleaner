@@ -1,0 +1,23 @@
+version: '3'  # Using a more widely supported version
+
+services:
+  web:
+    build: .
+    volumes:
+      - ./uploads:/app/uploads
+    expose:
+      - 8000
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=production
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web
+    restart: always
